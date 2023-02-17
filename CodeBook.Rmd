@@ -61,7 +61,8 @@ hspower$datetime <- ymd_hms(paste(hspower[,1],hspower[,2]))
 str(hspower) ## Checkup
 ```
 
-OK \## Plotting
+OK 
+## Plotting
 
 ### Plot 1
 
@@ -117,3 +118,43 @@ legend(x="topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 plot(hspower$datetime,hspower$Global_reactive_power, type = "l", xlab="datetime",ylab="Global_Reactive_Power")
 
 ```
+
+Great, this all works. But [our question](README.md) requires specific files. These files are obtained by 
+
+1.    Generating the R source code from this document:
+```{r eval = FALSE}
+knitr::purl("CodeBook.Rmd",output="R_plots.R")
+```
+2.   Write R code to read the raw data and write filtered data as `data.txt`
+```{r eval=FALSE}
+library(lubridate)
+hspower<-read.table("../household_power_consumption.txt",
+                    header=TRUE,
+                    sep=";"
+         )
+from <- ymd("2007-02-01")
+to <- ymd("2007-02-02")
+hspower <- hspower[dmy(hspower$Date) %in% from:to,]
+write.table(hspower,col.names=TRUE,
+            row.names=FALSE,sep=";",
+            quote=FALSE,
+            file="data.txt"
+)
+```
+
+3.   Creating individual files for each plot. This is copied from `R_plots.R`. Keep data reading file separate, so it can be sourced for each plot, the Data_read.R file. 
+```{r eval = FALSE}
+hspower<-read.table("data.txt",header=TRUE,sep=";")
+hspower[,3:9]<- lapply(hspower[,3:9],as.numeric)
+hspower$datetime <- dmy_hms(paste(hspower[,1],hspower[,2]))
+```
+
+4.    Write the png generation code. At the beginning add
+```{r eval = FALSE}
+png("plot1.png", width = 480, height = 480, bg = "transparent")
+```
+Finish off with dev.off()
+```{r eval = FALSE}
+dev.off()
+```
+
