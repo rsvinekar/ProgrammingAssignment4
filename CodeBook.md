@@ -26,7 +26,9 @@ str(hspower)
     ##  $ Sub_metering_3       : num  17 16 17 17 17 17 17 17 17 16 ...
 
 There are 2075259 entries, which is a large dataframe. We need to make
-the following changes 1. Convert Date to a readable format
+the following changes
+
+- Convert Date to a readable format
 
 ``` r
 library(lubridate)
@@ -75,8 +77,11 @@ dim(hspower) ## Checkup
     ## [1] 2880    9
 
 Now there are 2880 values, down from 2075259. Easier and faster to
-handle. Now we need to 1. Make columns 3 to 9 numeric 1. Make a datetime
-column to combine Date and Time values
+handle. Now we need to
+
+1.  Make columns 3 to 9 numeric
+
+2.  Make a datetime column to combine Date and Time values
 
 ``` r
 hspower[,3:9]<- lapply(hspower[,3:9],as.numeric)
@@ -107,14 +112,17 @@ OK \## Plotting
 hist(hspower$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 ```
 
-![](CodeBook_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> \### Plot 2
+![](CodeBook_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+### Plot 2
 
 ``` r
 plot(hspower$datetime,hspower$Global_active_power, type = "l", xlab="",ylab="Global Active Power (kilowatts)")
 ```
 
-![](CodeBook_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> \### Plot
-3
+![](CodeBook_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+### Plot 3
 
 ``` r
 plot(hspower$datetime,hspower$Sub_metering_1, type = "l", xlab="",ylab="Energy sub metering")
@@ -136,8 +144,9 @@ This requires generating two plots we have not generated before, and two
 plot(hspower$datetime,hspower$Voltage, type = "l", xlab="datetime",ylab="Voltage")
 ```
 
-![](CodeBook_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> \#### Plot
-4 bottom right
+![](CodeBook_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+#### Plot 4 bottom right
 
 ``` r
 plot(hspower$datetime,hspower$Global_reactive_power, type = "l", xlab="datetime",ylab="Global_Reactive_Power")

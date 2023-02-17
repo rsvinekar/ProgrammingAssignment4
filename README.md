@@ -80,8 +80,8 @@ The four plots that you will need to construct are shown below.
 
 ## Solutions:
 
-1.  `Data_setup.R` reads raw data as given and writes a filtered data.txt file. Run only once, not needed anymore.
+1.  `Data_setup.R` reads raw data as given and writes a filtered `data.txt` file. Run only once, not needed anymore.
 2.  `Data_read.R` reads data.txt into a variable, creates a datetime column by combining Date and Time, and converts all other columns to numeric data. Sourced by the plot files.
 3.  `plot1.R plot2.R plot3.R plot4.R` The files required by the assignment.
-4.  `CodeBook.md` and `CodeBook.Rmd` document the thinking process. Not that it is needed here
+4.  `CodeBook.md` and `CodeBook.Rmd` document the thinking process. Not that it is needed here. `R_plots.R` is R code directly converted from `CodeBook.Rmd` to R using `knitr::purl()`. Chunks from it were copied to `plot1.R plot2.R plot3.R plot4.R`
 5.  `plot1.png plot2.png plot3.png plot4.png`The png files are generated running plot1.R etc.
