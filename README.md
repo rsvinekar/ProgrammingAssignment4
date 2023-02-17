@@ -1,3 +1,15 @@
+## Solutions:
+-  [plot1.R](plot1.R) [plot2.R](plot2.R) [plot3.R](plot3.R) [plot4.R](plot4.R) The files required by the assignment.
+-  [plot1.png](plot1.png) [plot2.png](plot2.png) [plot3.png](plot3.png) [plot4.png](plot4.png) The png files are generated running plot1.R etc. They have transparent background like the images given in tutorial, so you may need to click the download button to view them, especially if you have a dark theme.
+
+See [CodeBook.md](CodeBook.md) for how the solutions were developed. Other files are:-
+
+1.  [Data_setup.R](Data_setup.R) reads raw data as given and writes a filtered [data.txt](data.txt) file. Run only once, not needed anymore.
+2.  [Data_read.R](Data_read.R) reads [data.txt](data.txt) into a variable, creates a datetime column by combining Date and Time, and converts all other columns to numeric data. Sourced by the plot files.
+3.  [CodeBook.Rmd](CodeBook.Rmd) - RStudio Rmarkdown file documents the thinking process and was used to run the analysis. Not that it is needed here.[CodeBook.md](CodeBook.md) is github markdown and [R_plots.R](R_plots.R) is R code directly converted from [CodeBook.Rmd](CodeBook.Rmd) to R using `knitr::purl()`. Chunks from it were copied to [plot1.R](plot1.R) [plot2.R](plot2.R) [plot3.R](plot3.R) [plot4.R](plot4.R)
+
+The instructions for the exercise are given below:-
+
 ## Introduction
 
 This assignment uses data from the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine Learning Repository</a>, a popular repository for machine learning datasets. In particular, we will be using the "Individual household electric power consumption Data Set" which I have made available on the course web site:
@@ -78,11 +90,4 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png)
 
-## Solutions:
-See [CodeBook.md](CodeBook.md) for how the solutions were developed
 
-1.  [Data_setup.R](Data_setup.R) reads raw data as given and writes a filtered [data.txt](data.txt) file. Run only once, not needed anymore.
-2.  [Data_read.R](Data_read.R) reads [data.txt](data.txt) into a variable, creates a datetime column by combining Date and Time, and converts all other columns to numeric data. Sourced by the plot files.
-3.  [plot1.R](plot1.R) [plot2.R](plot2.R) [plot3.R](plot3.R) [plot4.R](plot4.R) The files required by the assignment.
-4.  [CodeBook.Rmd](CodeBook.Rmd) - RStudio Rmarkdown file documents the thinking process and was used to run the analysis. Not that it is needed here.[CodeBook.md](CodeBook.md) is github markdown and [R_plots.R](R_plots.R) is R code directly converted from [CodeBook.Rmd](CodeBook.Rmd) to R using `knitr::purl()`. Chunks from it were copied to [plot1.R](plot1.R) [plot2.R](plot2.R) [plot3.R](plot3.R) [plot4.R](plot4.R)
-5.  [plot1.png](plot1.png) [plot2.png](plot2.png) [plot3.png](plot3.png) [plot4.png](plot4.png) The png files are generated running plot1.R etc.

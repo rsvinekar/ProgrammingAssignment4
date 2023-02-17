@@ -352,6 +352,36 @@ display: none;
 </div>
 
 
+<div id="solutions" class="section level2">
+<h2>Solutions:</h2>
+<ul>
+<li><a href="plot1.R">plot1.R</a> <a href="plot2.R">plot2.R</a> <a href="plot3.R">plot3.R</a> <a href="plot4.R">plot4.R</a> The files
+required by the assignment.</li>
+<li><a href="plot1.png">plot1.png</a> <a href="plot2.png">plot2.png</a>
+<a href="plot3.png">plot3.png</a> <a href="plot4.png">plot4.png</a> The
+png files are generated running plot1.R etc. They have transparent
+background like the images given in tutorial, so you may need to click
+the download button to view them, especially if you have a dark
+theme.</li>
+</ul>
+<p>See <a href="CodeBook.md">CodeBook.md</a> for how the solutions were
+developed. Other files are:-</p>
+<ol style="list-style-type: decimal">
+<li><a href="Data_setup.R">Data_setup.R</a> reads raw data as given and
+writes a filtered <a href="data.txt">data.txt</a> file. Run only once,
+not needed anymore.</li>
+<li><a href="Data_read.R">Data_read.R</a> reads <a href="data.txt">data.txt</a> into a variable, creates a datetime column
+by combining Date and Time, and converts all other columns to numeric
+data. Sourced by the plot files.</li>
+<li><a href="CodeBook.Rmd">CodeBook.Rmd</a> - RStudio Rmarkdown file
+documents the thinking process and was used to run the analysis. Not
+that it is needed here.<a href="CodeBook.md">CodeBook.md</a> is github
+markdown and <a href="R_plots.R">R_plots.R</a> is R code directly
+converted from <a href="CodeBook.Rmd">CodeBook.Rmd</a> to R using
+<code>knitr::purl()</code>. Chunks from it were copied to <a href="plot1.R">plot1.R</a> <a href="plot2.R">plot2.R</a> <a href="plot3.R">plot3.R</a> <a href="plot4.R">plot4.R</a></li>
+</ol>
+<p>The instructions for the exercise are given below:-</p>
+</div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This assignment uses data from the
@@ -485,30 +515,6 @@ There should be four PNG files and four R code files.</p>
 <p class="caption">plot of chunk unnamed-chunk-5</p>
 </div>
 </div>
-</div>
-<div id="solutions" class="section level2">
-<h2>Solutions:</h2>
-<p>See <a href="CodeBook.md">CodeBook.md</a> for how the solutions were
-developed</p>
-<ol style="list-style-type: decimal">
-<li><a href="Data_setup.R">Data_setup.R</a> reads raw data as given and
-writes a filtered <a href="data.txt">data.txt</a> file. Run only once,
-not needed anymore.</li>
-<li><a href="Data_read.R">Data_read.R</a> reads <a href="data.txt">data.txt</a> into a variable, creates a datetime column
-by combining Date and Time, and converts all other columns to numeric
-data. Sourced by the plot files.</li>
-<li><a href="plot1.R">plot1.R</a> <a href="plot2.R">plot2.R</a> <a href="plot3.R">plot3.R</a> <a href="plot4.R">plot4.R</a> The files
-required by the assignment.</li>
-<li><a href="CodeBook.Rmd">CodeBook.Rmd</a> - RStudio Rmarkdown file
-documents the thinking process and was used to run the analysis. Not
-that it is needed here.<a href="CodeBook.md">CodeBook.md</a> is github
-markdown and <a href="R_plots.R">R_plots.R</a> is R code directly
-converted from <a href="CodeBook.Rmd">CodeBook.Rmd</a> to R using
-<code>knitr::purl()</code>. Chunks from it were copied to <a href="plot1.R">plot1.R</a> <a href="plot2.R">plot2.R</a> <a href="plot3.R">plot3.R</a> <a href="plot4.R">plot4.R</a></li>
-<li><a href="plot1.png">plot1.png</a> <a href="plot2.png">plot2.png</a>
-<a href="plot3.png">plot3.png</a> <a href="plot4.png">plot4.png</a> The
-png files are generated running plot1.R etc.</li>
-</ol>
 </div>
 
 
